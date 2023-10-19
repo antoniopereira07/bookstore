@@ -17,4 +17,4 @@ class TestProductSerializer(TestCase):
     self.assertEquals(serializer_data['price'], 100)
     self.assertEquals(serializer_data['title'], 'mouse')
     self.assertEquals(
-      serializer_data["category"][0]['title'], 'technology')
+      serializer_data['category'][0]['title'], 'technology')
