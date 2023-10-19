@@ -26,7 +26,7 @@ class Migration(migrations.Migration):
                         verbose_name="ID",
                     ),
                 ),
-                ("product", models.ManyToManyField(to="product.product")),
+                ("product", models.ManyToManyField(to="product.Product")),
                 (
                     "user",
                     models.ForeignKey(
