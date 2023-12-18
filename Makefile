@@ -99,7 +99,7 @@ check-py: check-py-flake8 check-py-black check-py-mypy ## Checks only Python fil
 
 .PHONY: check-py-flake8
 check-py-flake8: ## Runs flake8 linter
-	$(RUN_PYPKG_BIN) flake8 .
+	$(RUN_PYPKG_BIN) flake8 --exclude=venv .
 
 .PHONY: check-py-black
 check-py-black: ## Runs black in check mode (no changes)
