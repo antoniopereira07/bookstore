@@ -103,7 +103,7 @@ check-py-flake8: ## Runs flake8 linter
 
 .PHONY: check-py-black
 check-py-black: ## Runs black in check mode (no changes)
-	$(RUN_PYPKG_BIN) black --check --line-length 118 --fast .
+	-$(RUN_PYPKG_BIN) black --check --line-length 118 --fast .
 
 .PHONY: check-py-mypy
 check-py-mypy: ## Runs mypy

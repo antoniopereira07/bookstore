@@ -22,8 +22,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = (
-  "django-insecure-@*6gm#&!+4zh64@7#ik8sga_*8od4nn9il#uk=io%h@5ua4+t_"
-  )
+    "django-insecure-@*6gm#&!+4zh64@7#ik8sga_*8od4nn9il#uk=io%h@5ua4+t_"
+)
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -102,11 +102,14 @@ AUTH_PASSWORD_VALIDATORS = [
      "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"
      },
     {"NAME":
-     "django.contrib.auth.password_validation.MinimumLengthValidator"},
+     "django.contrib.auth.password_validation.MinimumLengthValidator"
+     },
     {"NAME":
-     "django.contrib.auth.password_validation.CommonPasswordValidator"},
+     "django.contrib.auth.password_validation.CommonPasswordValidator"
+     },
     {"NAME":
-     "django.contrib.auth.password_validation.NumericPasswordValidator"},
+     "django.contrib.auth.password_validation.NumericPasswordValidator"
+     },
 ]
 
 
@@ -140,7 +143,7 @@ REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": [
         "rest_framework.authentication.BasicAuthentication",
         "rest_framework.authentication.SessionAuthentication",
-        'rest_framework.authentication.TokenAuthentication',
+        "rest_framework.authentication.TokenAuthentication",
     ],
 }
 
