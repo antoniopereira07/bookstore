@@ -8,7 +8,7 @@ from django.urls import reverse
 
 from product.factories import CategoryFactory, ProductFactory
 from order.factories import UserFactory
-from product.models import Product
+from product.models.product import Product
 
 
 class TestProductViewSet(APITestCase):

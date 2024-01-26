@@ -6,8 +6,8 @@ from rest_framework.authentication import (
 )
 from rest_framework.permissions import IsAuthenticated
 
-from order.models import Order
-from order.serializers import OrderSerializer
+from order.models.order import Order
+from order.serializers.order_serializer import OrderSerializer
 
 
 class OrderViewSet(ModelViewSet):

@@ -5,7 +5,7 @@ from rest_framework.test import APIClient, APITestCase
 from rest_framework.views import status
 
 from product.factories import CategoryFactory
-from product.models import Category
+from product.models.category import Category
 
 
 class CategoryViewSet(APITestCase):

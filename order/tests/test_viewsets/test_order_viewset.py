@@ -9,8 +9,8 @@ from django.urls import reverse
 from product.factories import CategoryFactory, ProductFactory
 from order.factories import OrderFactory, UserFactory
 
-# from product.models import Product
-# from order.models import Order
+# from product.models.product import Product
+# from order.models.order import Order
 
 
 class TestOrderViewSet(APITestCase):
