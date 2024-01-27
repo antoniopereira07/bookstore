@@ -1,7 +1,6 @@
 from django.urls import path, include
 from rest_framework import routers
 
-# from product.viewsets.category_viewset import viewsets
 from product.viewsets.category_viewset import CategoryViewSet
 from product.viewsets.product_viewset import ProductViewSet
 
