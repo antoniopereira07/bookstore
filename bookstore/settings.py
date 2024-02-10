@@ -11,12 +11,13 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 import os
+import dotenv
+dotenv.load_dotenv()
 from pathlib import Path
 from typing import List
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
-
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
@@ -86,12 +87,12 @@ WSGI_APPLICATION = "bookstore.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": os.environ.get("SQL_ENGINE", "django.db.backends.sqlite3"),
-        "NAME": os.environ.get("SQL_DATABASE", BASE_DIR / "db.sqlite3"),
-        "USER": os.environ.get("SQL_USER", "user"),
-        "PASSWORD": os.environ.get("SQL_PASSWORD", "password"),
-        "HOST": os.environ.get("SQL_HOST", "localhost"),
-        "PORT": os.environ.get("SQL_PORT", "5432"),
+        "ENGINE": os.environ.get("POSTGRES_ENGINE", "django.db.backends.postgresql"),
+        "NAME": os.environ.get("POSTGRES_DATABASE", "bookstore_dev_db"),
+        "USER": os.environ.get("POSTGRES_USER", "bookstore_dev"),
+        "PASSWORD": os.environ.get("POSTGRES_PASSWORD", "bookstore_dev"),
+        "HOST": os.environ.get("POSTGRES_HOST", "localhost"),
+        "PORT": os.environ.get("POSTGRES_PORT", "5432"),
     }
 }
 
