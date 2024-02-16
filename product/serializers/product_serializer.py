@@ -1,7 +1,6 @@
 from rest_framework import serializers
 
-from product.models.product import Product
-from product.models.category import Category
+from product.models.product import Product, Category
 from product.serializers.category_serializer import CategorySerializer
 
 
@@ -30,4 +29,4 @@ class ProductSerializer(serializers.ModelSerializer):
         for category in category_data:
             product.category.add(category)
 
-            return product
+        return product

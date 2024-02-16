@@ -9,5 +9,5 @@ class Category(models.Model):
     )
     active: models.BooleanField = models.BooleanField(default=True)
 
-    def __str__(self):
+    def __unicode__(self):
         return self.title

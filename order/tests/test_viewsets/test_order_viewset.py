@@ -1,6 +1,5 @@
 import json
 
-from rest_framework.authtoken.models import Token
 from rest_framework import status
 from rest_framework.test import APIClient, APITestCase
 
@@ -14,9 +13,6 @@ class TestOrderViewSet(APITestCase):
     client = APIClient()
 
     def setUp(self):
-        self.user = UserFactory()
-        token = Token.objects.create(user=self.user)  # added
-        token.save()  # added
 
         self.category = CategoryFactory(title="technology")
         self.product = ProductFactory(
@@ -24,9 +20,7 @@ class TestOrderViewSet(APITestCase):
         self.order = OrderFactory(product=[self.product])
 
     def test_order(self):
-        token = Token.objects.get(user__username=self.user.username)  # added
-        self.client.credentials(
-            HTTP_AUTHORIZATION="Token " + token.key)  # added
+
         response = self.client.get(
             reverse("order-list", kwargs={"version": "v1"}))
 
@@ -47,8 +41,6 @@ class TestOrderViewSet(APITestCase):
             self.category.title)
 
     def test_create_order(self):
-        token = Token.objects.get(user__username=self.user.username)
-        self.client.credentials(HTTP_AUTHORIZATION="Token " + token.key)
 
         user = UserFactory()
         product = ProductFactory()
@@ -61,5 +53,3 @@ class TestOrderViewSet(APITestCase):
         )
 
         self.assertEqual(response.status_code, status.HTTP_201_CREATED)
-
-        # created_order = Order.objects.get(user=user)
