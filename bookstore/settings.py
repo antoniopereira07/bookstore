@@ -10,11 +10,11 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
-import os
-import dotenv
-dotenv.load_dotenv()
 from pathlib import Path
 from typing import List
+import os
+import dotenv
+dotenv.load_dotenv(".env.dev")
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -23,9 +23,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = (
-    "django-insecure-@*6gm#&!+4zh64@7#ik8sga_*8od4nn9il#uk=io%h@5ua4+t_"
-)
+# SECRET_KEY = (
+#     "django-insecure-@*6gm#&!+4zh64@7#ik8sga_*8od4nn9il#uk=io%h@5ua4+t_"
+# )
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -87,12 +87,12 @@ WSGI_APPLICATION = "bookstore.wsgi.application"
 
 DATABASES = {
     "default": {
-        "ENGINE": os.environ.get("SQL_ENGINE", "django.db.backends.sqlite3"),
-        "NAME": os.environ.get("SQL_DATABASE", BASE_DIR / "db.sqlite3"),
-        "USER": os.environ.get("SQL_USER", "user"),
-        "PASSWORD": os.environ.get("SQL_PASSWORD", "password"),
-        "HOST": os.environ.get("SQL_HOST", "localhost"),
-        "PORT": os.environ.get("SQL_PORT", "5432"),
+        "ENGINE": os.environ.get("SQL_ENGINE:", "django.db.backends.sqlite3"),
+        "NAME": os.environ.get("SQL_DATABASE:", BASE_DIR / "db.sqlite3"),
+        "USER": os.environ.get("SQL_USER:", "user"),
+        "PASSWORD": os.environ.get("SQL_PASSWORD:", "password"),
+        "HOST": os.environ.get("SQL_HOST:", "localhost"),
+        "PORT": os.environ.get("SQL_PORT:", "5432"),
     }
 }
 
@@ -153,14 +153,14 @@ INTERNAL_IPS = [
     "127.0.0.1",
 ]
 
-# SECRET_KEY = os.environ.get("SECRET_KEY")
+SECRET_KEY = os.environ.get("SECRET_KEY")
 
-# DEBUG = int(os.environ.get("DEBUG", default=0))
+# DEBUG = int(os.environ.get("DEBUG:", default=0))
 
 # 'DJANGO_ALLOWED_HOSTS' should be a single string of hosts
 # with a space between each.
 # For example: 'DJANGO_ALLOWED_HOSTS=localhost 127.0.0.1 [::1]'
-DJANGO_ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS", "a").split(" ")
+DJANGO_ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS", "").split(" ")
 
 # print(DATABASES)
 # print(DJANGO_ALLOWED_HOSTS)
