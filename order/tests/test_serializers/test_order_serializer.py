@@ -1,7 +1,8 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
 from django.test import TestCase
 
-from order.factories import OrderFactory
-from product.factories import ProductFactory
+from order.factories import OrderFactory, ProductFactory
 from order.serializers.order_serializer import OrderSerializer
 
 
@@ -15,7 +16,7 @@ class TestOrderSerializer(TestCase):
 
     def test_order_serializer(self):
         serializer_data = self.order_serializer.data
-        self.assertEquals(
+        self.assertEqual(
             serializer_data["product"][0]["title"], self.product_1.title)
-        self.assertEquals(
+        self.assertEqual(
             serializer_data["product"][1]["title"], self.product_2.title)
