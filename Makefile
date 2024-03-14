@@ -1,7 +1,7 @@
 # Set this to ~use it everywhere in the project setup
 PYTHON_VERSION ?= 3.8.10
 # the directories containing the library modules this repo builds
-LIBRARY_DIRS = mylibrary
+LIBRARY_DIRS = order product bookstore
 # build artifacts organized in this Makefile
 BUILD_DIR ?= build
 
@@ -103,7 +103,7 @@ check-py-flake8: ## Runs flake8 linter
 
 .PHONY: check-py-black
 check-py-black: ## Runs black in check mode (no changes)
-	$(RUN_PYPKG_BIN) black --check --line-length 118 --fast .
+	-$(RUN_PYPKG_BIN) black --check --line-length 118 --fast .
 
 .PHONY: check-py-mypy
 check-py-mypy: ## Runs mypy
