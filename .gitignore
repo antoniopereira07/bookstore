@@ -129,6 +129,9 @@ ENV/
 env.bak/
 venv.bak/
 
+# Ignore py.typed files
+**/py.typed
+
 # Spyder project settings
 .spyderproject
 .spyproject
