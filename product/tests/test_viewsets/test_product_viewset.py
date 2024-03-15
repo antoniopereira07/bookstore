@@ -3,11 +3,11 @@ import json
 from django.urls import reverse
 from rest_framework.authtoken.models import Token
 from rest_framework.test import APIClient, APITestCase
-from rest_framework.views import status
+from rest_framework import status
 
 from order.factories import UserFactory
 from product.factories import CategoryFactory, ProductFactory
-from product.models import Product
+from product.models.product import Product
 
 
 class TestProductViewSet(APITestCase):

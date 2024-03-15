@@ -65,11 +65,10 @@ deps-py-update: pyproject.toml ## Update Poetry deps, e.g. after adding a new on
 
 ##@ Setup
 # dynamic-ish detection of Python installation directory with pyenv
-# $(PYENV_VERSION_DIR):
-# 	pyenv install --skip-existing $(PYTHON_VERSION)
-
-# $(PYTHON_VERSION_FILE): $(PYENV_VERSION_DIR)
-# 	pyenv local $(PYTHON_VERSION)
+$(PYENV_VERSION_DIR):
+	pyenv install --skip-existing $(PYTHON_VERSION)
+$(PYTHON_VERSION_FILE): $(PYENV_VERSION_DIR)
+	pyenv local $(PYTHON_VERSION)
 
 .PHONY: deps
 deps: deps-brew deps-py  ## Installs all dependencies
@@ -86,8 +85,8 @@ deps-py: $(PYTHON_VERSION_FILE) ## Installs Python development and runtime depen
 		--index-url $(PYPI_PROXY) \
 		pip
 	$(PIP) install --upgrade \
-											 --index-url $(PYPI_PROXY) \
-											 poetry
+                                     		--index-url $(PYPI_PROXY) \
+                                     		poetry
 	$(POETRY) install
 
 ##@ Code Quality
