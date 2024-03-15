@@ -1,6 +1,6 @@
 name: Python Pull Request Workflow
 on: [pull_request]
-jobs: antoniopereira07/bookstore/.github/workflows/workflow-pr.yml@refs/pull/15/merge
+jobs:
 
   qa:
     name: Quality check
