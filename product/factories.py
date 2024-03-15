@@ -1,7 +1,6 @@
 import factory
 
-from product.models.category import Category
-from product.models.product import Product
+from product.models import Category, Product
 
 
 class CategoryFactory(factory.django.DjangoModelFactory):
@@ -20,7 +19,7 @@ class ProductFactory(factory.django.DjangoModelFactory):
     title = factory.Faker("pystr")
 
     @factory.post_generation
-    def categories(self, create, extracted, **kwargs):
+    def category(self, create, extracted, **kwargs):
         if not create:
             return
 
