@@ -413,22 +413,13 @@ doc = ["Sphinx", "sphinx-rtd-theme", "sphinxcontrib-spelling"]
 
 [[package]]
 name = "faker"
-<<<<<<< HEAD
-version = "24.1.0"
-=======
-version = "24.0.0"
->>>>>>> e4180a04cff6d2f26f0bb68cfac5500bc755b03a
+version = "24.2.0"
 description = "Faker is a Python package that generates fake data for you."
 optional = false
 python-versions = ">=3.8"
 files = [
-<<<<<<< HEAD
-    {file = "Faker-24.1.0-py3-none-any.whl", hash = "sha256:89ae0932f4f269754790569828859eaa0ae2ce73d1f3eb1f30ae7c20d4daf5ce"},
-    {file = "Faker-24.1.0.tar.gz", hash = "sha256:4fb0c16c71ad35d278a5fa7a4106a5c26c2b2b5c5efc47c1d67635db90b6071e"},
-=======
-    {file = "Faker-24.0.0-py3-none-any.whl", hash = "sha256:2456d674f40bd51eb3acbf85221277027822e529a90cc826453d9a25dff932b1"},
-    {file = "Faker-24.0.0.tar.gz", hash = "sha256:ea6f784c40730de0f77067e49e78cdd590efb00bec3d33f577492262206c17fc"},
->>>>>>> e4180a04cff6d2f26f0bb68cfac5500bc755b03a
+    {file = "Faker-24.2.0-py3-none-any.whl", hash = "sha256:dce4754921f9fa7e2003c26834093361b8f45072e0f46f172d6ca1234774ecd4"},
+    {file = "Faker-24.2.0.tar.gz", hash = "sha256:87d5e7730426e7b36817921679c4eaf3d810cedb8c81194f47adc3df2122ca18"},
 ]
 
 [package.dependencies]
@@ -593,11 +584,7 @@ files = [
 
 [[package]]
 name = "mypy"
-<<<<<<< HEAD
-version = "1.10.0+dev.ea49e1fa488810997d192a36d85357dadb4a7f14"
-=======
-version = "1.10.0+dev.0b8fed526de75284349afbd4b448172b61148931"
->>>>>>> e4180a04cff6d2f26f0bb68cfac5500bc755b03a
+version = "1.10.0+dev.31dc50371aaa267f258f74275b4bc07f27d70001"
 description = "Optional static typing for Python"
 optional = false
 python-versions = ">=3.8"
@@ -619,11 +606,7 @@ reports = ["lxml"]
 type = "git"
 url = "https://github.com/python/mypy.git"
 reference = "HEAD"
-<<<<<<< HEAD
-resolved_reference = "ea49e1fa488810997d192a36d85357dadb4a7f14"
-=======
-resolved_reference = "0b8fed526de75284349afbd4b448172b61148931"
->>>>>>> e4180a04cff6d2f26f0bb68cfac5500bc755b03a
+resolved_reference = "31dc50371aaa267f258f74275b4bc07f27d70001"
 
 [[package]]
 name = "mypy-extensions"
