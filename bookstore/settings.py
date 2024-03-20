@@ -59,6 +59,7 @@ MIDDLEWARE = [
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
     "debug_toolbar.middleware.DebugToolbarMiddleware",
+    "whitenoise.middleware.WhiteNoiseMiddleware",
 ]
 
 ROOT_URLCONF = "bookstore.urls"
@@ -153,6 +154,10 @@ INTERNAL_IPS = [
     "127.0.0.1",
 ]
 
+STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
+STATIC_ROOT = BASE_DIR / "staticfiles"
+
 # SECRET_KEY = os.environ.get("SECRET_KEY")
 
 # DEBUG = int(os.environ.get("DEBUG:", default=0))
@@ -161,8 +166,3 @@ INTERNAL_IPS = [
 # with a space between each.
 # For example: 'DJANGO_ALLOWED_HOSTS=localhost 127.0.0.1 [::1]'
 DJANGO_ALLOWED_HOSTS = os.environ.get("DJANGO_ALLOWED_HOSTS", "").split(" ")
-
-# print(DATABASES)
-# print(DJANGO_ALLOWED_HOSTS)
-# print(DEBUG)
-# print(SECRET_KEY)
