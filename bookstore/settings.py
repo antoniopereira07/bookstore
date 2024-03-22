@@ -30,9 +30,7 @@ SECRET_KEY = (
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["localhost", "127.0.0.1", "antoniodev07.pythonanywhere.com"]
-
-# DJANGO_ALLOWED_HOSTS: List[str] = []
+ALLOWED_HOSTS = ["localhost", "127.0.0.1", "ebac-bookstore-api.herokuapp.com", "antoniodev07.pythonanywhere.com"]
 
 
 # Application definition
